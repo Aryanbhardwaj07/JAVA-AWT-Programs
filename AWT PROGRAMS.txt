@@ -1,0 +1,93 @@
+****************SWAPPIN TWO TEXTS***************
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.sound.sampled.SourceDataLine;
+class A extends Frame implements ActionListener
+{
+    TextField t1,t2;
+    Button b1,b2;
+    A(){
+        setLayout(new FlowLayout());
+        setVisible(true);
+        setSize(600, 600);
+        b1=new Button("SWAP");
+        b2=new Button("Close");
+        t1=new TextField(10);
+        t2= new TextField(10);
+
+        add(t1);add(t2);
+        add(b1);add(b2);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        t1.addActionListener(this);
+        t2.addActionListener(this);
+   
+    }
+    public void actionPerformed(ActionEvent obj){
+        if(obj.getSource()==b2){dispose();}
+        String text1= t1.getText();
+        String text2= t2.getText();
+        System.out.println("MOhan"); 
+        t1.setText(text2);
+        t2.setText(text1);
+        if(obj.getSource()==b2){System.out.println(text1)}
+    }
+
+    public static void main(String[] args) {
+        A a=new A();
+    }
+}
+
+************EMPLOYEE MANAGEMENT**********
+import java.awt.*;
+import java.awt.event.*;
+class Demo extends Frame implements ActionListener
+{
+Button b2,b3,b4,b5;
+TextField t1,t2,t3,t4;
+Label l1,l2,l3,l4;
+Demo()
+{
+setVisible(true);
+setSize(700,700);
+l1=new Label("Employee Name:");
+l2= new Label("Salary");
+l3=new Label("ID:");
+l4= new Label("Employee Details are:");
+t1=new TextField(20);
+t2=new TextField(20);
+t3=new TextField(20);
+t4= new TextField(20);
+b2= new Button("CLOSE");
+b3= new Button("Name");
+b4= new Button("Salary");
+b5= new Button("Id");
+setBackground(Color.YELLOW);
+l1.setBackground(Color.WHITE);
+l2.setBackground(Color.WHITE);
+l3.setBackground(Color.WHITE);
+l4.setBackground(Color.WHITE);
+setLayout(new FlowLayout());
+add(l1);add(t1);add(l2);add(t2);add(l3);add(t3);add(l4);add(t4);add(b2);add(b3);add(b4);add(b5);
+b2.addActionListener(this);
+b3.addActionListener(this);
+b4.addActionListener(this);
+b5.addActionListener(this);
+
+}
+
+public void actionPerformed(ActionEvent obj)
+{
+if(obj.getSource()==b3){String a=t1.getText();t4.setText(a);}
+if(obj.getSource()==b4){String a=t2.getText();t4.setText(a);}
+if(obj.getSource()==b5){String a=t3.getText();t4.setText(a);}
+if(obj.getSource()==b2){dispose();}
+}
+public static void main(String args[])
+{
+Demo obj1=new Demo();
+
+
+}
+}
